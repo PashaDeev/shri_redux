@@ -19,7 +19,7 @@ export default function createStore(reducer, initialState, extension) {
   if (isFunction(initialState) && extension === undefined) {
     const applyMiddlewares = initialState;
     const preloadState = undefined;
-    return applyMiddlewares(createStore)(reducer, preloadState);
+    return applyMiddlewares(createStore, reducer, preloadState);
   }
 
   let state = initialState;
