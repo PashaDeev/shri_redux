@@ -14,11 +14,4 @@ import applyMiddleware from './apply_middleware';
   }
   // eslint-disable-next-line no-param-reassign
   root.redux = { createStore, applyMiddleware };
-  if (typeof window !== `undefined`) {
-    window.redux = { createStore, applyMiddleware };
-  }
-
-  if (typeof global !== `undefined`) {
-    global.redux = { createStore, applyMiddleware };
-  }
-})(this);
+})((typeof window !== 'undefined' && window) || global);

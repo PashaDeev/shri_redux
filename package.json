@@ -11,13 +11,16 @@
   "main": "lib/index.js",
   "scripts": {
     "dev": "parcel build ./src/index.js --out-dir ./build/",
-    "build": "eslint --debug ./ && parcel build ./src/index.js --out-dir ./dist",
-    "lint": "eslint --debug ./"
+    "build": "eslint --debug ./ && parcel build ./src/index.js --out-dir ./build",
+    "lint": "eslint --debug ./",
+    "test": "mocha ./test",
+    "test:build": "npm run build && mocha ./test"
   },
   "dependencies": {
     "requireindex": "1.1.0"
   },
   "devDependencies": {
+    "chai": "4.2.0",
     "eslint": "6.4.0",
     "eslint-config-airbnb-base": "14.0.0",
     "eslint-config-prettier": "6.3.0",

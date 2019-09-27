@@ -1,5 +1,7 @@
-/.git
-/.idea
-/.vscode
-/build
+.git
+.idea
+.vscode
+build
+test
+.cache
 node_modules
