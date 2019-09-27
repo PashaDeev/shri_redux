@@ -28,7 +28,12 @@ export default function createStore(reducer, initialState, extension) {
   const subscribers = [];
   return {
     dispatch(action) {
+      const oldState = state;
       state = currentReducer(state, action);
+
+      if (state === oldState) {
+        throw new Error('reducer must return copy of object');
+      }
 
       subscribers.forEach(subscriber => {
         subscriber(state);
