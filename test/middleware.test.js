@@ -8,4 +8,4 @@ describe('middleware test', () => {
   it('Не вызывает ошибку', () => {
     const store = createStore(() => {}, applyMiddleware(middleware));
   })
-})
+});

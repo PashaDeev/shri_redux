@@ -1,7 +1,6 @@
 const { describe, it } = require('mocha');
 const { expect } = require('chai');
 const { createStore } = require('../build');
-const _ = require('lodash');
 
 const actionDict = {
   CHANGE_DATA: 'CHANGE_DATA',
