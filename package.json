@@ -11,7 +11,7 @@
   "main": "lib/index.js",
   "scripts": {
     "dev": "parcel build src/store/index.js --out-dir ./build/",
-    "build": "eslint --debug ./ && parcel build src/store/index.js --out-dir ./build",
+    "build": "eslint --debug ./ && parcel build src/store/index.js --out-dir ./dest",
     "lint": "eslint --debug ./",
     "test": "mocha ./test",
     "test:build": "npm run build && mocha ./test"
