@@ -10,8 +10,8 @@
   "author": "pavel",
   "main": "lib/index.js",
   "scripts": {
-    "dev": "parcel build ./src/index.js --out-dir ./build/",
-    "build": "eslint --debug ./ && parcel build ./src/index.js --out-dir ./build",
+    "dev": "parcel build src/store/index.js --out-dir ./build/",
+    "build": "eslint --debug ./ && parcel build src/store/index.js --out-dir ./build",
     "lint": "eslint --debug ./",
     "test": "mocha ./test",
     "test:build": "npm run build && mocha ./test"
