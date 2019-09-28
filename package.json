@@ -1,12 +1,7 @@
 {
-  "name": "eslint-plugin-lodash-to-native",
+  "name": "shri_redux",
   "version": "0.0.0",
-  "description": "this plugin replace lodash map method to native array.map",
-  "keywords": [
-    "eslint",
-    "eslintplugin",
-    "eslint-plugin"
-  ],
+  "description": "redux realisation for shri 2019",
   "author": "pavel",
   "main": "dest/index.js",
   "scripts": {
