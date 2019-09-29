@@ -1,6 +1,6 @@
-import createStore from './create_store';
-import applyMiddleware from './apply_middleware';
-import middleware from './function_middleware';
+const createStore = require('./create_store');
+const applyMiddleware = require('./apply_middleware');
+const middleware = require('./function_middleware');
 
 // eslint-disable-next-line func-names
 (function(root) {

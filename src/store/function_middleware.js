@@ -8,4 +8,4 @@ function createMiddleware() {
   };
 }
 
-export default createMiddleware();
+module.exports = createMiddleware();

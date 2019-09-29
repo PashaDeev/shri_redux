@@ -20,7 +20,7 @@ function composeMiddlewares(...middlewares) {
  * @param middlewares принимает в качестве аргументов middlewares
  * @return {function(*, *=, ...[*]): {dispatch: *, store: *}} Возврщает функцию для стора
  */
-export default function applyMiddleware(...middlewares) {
+module.exports = function applyMiddleware(...middlewares) {
   /**
    * Фнкция, которая исполняется непосредственно в сторе
    * @param createStore функция создания стора
@@ -45,8 +45,8 @@ export default function applyMiddleware(...middlewares) {
     dispatch = composeMiddlewares(...middleWaresWithCurrentStore)(store.dispatch);
 
     return {
-      store,
+      ...store,
       dispatch,
     };
   };
-}
+};

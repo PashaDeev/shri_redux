@@ -1,6 +1,6 @@
 const { describe, it } = require('mocha');
 const { expect } = require('chai');
-const { createStore } = require('../build');
+const { createStore } = require('../src/store/index');
 
 const actionDict = {
   CHANGE_DATA: 'CHANGE_DATA',
@@ -18,7 +18,7 @@ const reducer = function(state, action) {
 describe('store test', () => {
   const initState = { test: 'success' };
   it('проверка на начальное состояние', () => {
-    const reducer = () => {};
+    const reducer = (initState) => ({...initState});
     const store = createStore(reducer, initState).getState();
     expect(store).to.deep.equal(initState);
   });
@@ -49,7 +49,9 @@ describe('store test', () => {
 
     const store = createStore(reducer, initState);
 
-    expect(() => {store.dispatch({})}).to.throw(Error);
+    expect(() => {
+      store.dispatch({});
+    }).to.throw(Error);
   });
 
   it('Вызывает обработчики при изменении состояния', () => {
@@ -66,6 +68,14 @@ describe('store test', () => {
     expect(test).to.equal('reuse');
   });
 
+  it('Нельзя передать функцию в dispatch', () => {
+    const cb = () => {};
+
+    const store = createStore(() => ({}));
+
+    expect(() => store.dispatch(cb)).to.throw(Error);
+  });
+
   it('Отписывается от событий стора', () => {
     let test = 'init';
 
@@ -79,5 +89,5 @@ describe('store test', () => {
     store.dispatch({});
 
     expect(test).to.equal('init');
-  })
+  });
 });
